@@ -12,7 +12,6 @@ def dance(D, round):
         pos = 2 * len(D[nxt]) - pos
         D[nxt] = D[nxt][:pos] + [c] + D[nxt][pos:]
 
-
 lst = [[int(x) for x in line.split()] for line in open("05a.txt")]
 D = dict(enumerate(map(list, zip(*lst))))
 for i in range(10):
@@ -44,5 +43,5 @@ while True:
     dance(D, i % 4)
     states.add(state)
     shout = int(''.join(str(D[j][0]) for j in range(4)))
-    shout = max(shout, best)
+    best = max(shout, best)
     i += 1
